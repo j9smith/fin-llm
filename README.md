@@ -8,3 +8,9 @@ Features:
 - **API calls**: Can access up-to-date news, regulatory filings, and real-time data feeds via API calls.
 - **Generative UI**: Populates UI elements in a generative fashion as directed by the LLM, useful for displaying data.
 - **User auth**: User authentication handled via FastAPI/SQLAlchemy/PostgreSQL. 
+
+## Contributors
+This project was a joint effort between: 
+- [@alexlambert1](https://github.com/alexlambert1)
+- [@crabbacus](https://github.com/crabbacus)
+- [@j9smith](https://github.com/j9smith)
