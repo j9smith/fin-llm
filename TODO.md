@@ -18,7 +18,7 @@ More generally as part of this just need the app to be able to handle user input
   - _News:_ need to add a tool to pull in recent news.
   - _Pricing:_ something that can pull in pricing data (like stock prices). Could be just call an external API for now, but I agree with Mitch that we should have some sort of static storage that we update daily, just to avoid incurring big API costs.
   - Plenty more that we could add as well
-  - Do we want to add analytics for portfolios? Not saying we need the boring stuff like "tracking", but perhaps can sell it as the "tooling professionals use to analyse their positions" etc. This is my ONLY value add
+  - Do we want to add analytics for portfolios? Not saying we need the boring stuff like "tracking", but perhaps can sell it as the "tooling professionals use to analyse their positions" etc. 
 
 ## app.py
 
