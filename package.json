@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "chart.js": "^4.4.6",
+    "react-chartjs-2": "^5.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "scripts": {
+    "start": "concurrently \"uvicorn backend_app.app:app --host 127.0.0.1 --port 8000 --reload\" \"cd frontend_app/goose && npm start\"",
+    "build": "cd frontend_app/goose && npm install && npm run build"
+  }
+}

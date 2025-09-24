@@ -1,0 +1,137 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "retrieve_filing",
+            "description": "This tool is used to retrieve a copy of any regulatory filings related to the ticker provided. This function should be called when asked about a specific stock, unless extra context is not necessary. The function should use keywords that you feel may be necessary to retrieve chunks from a vector database that would help to provide the best response to the user's query. Use as many keywords as you need, at least 10. The ticker should be provided in lowercase.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "ticker": {
+                        "type": "string",
+                        "description": "The ticker symbol to retrieve filings for."
+                    },
+                    "keywords": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of keywords to refine the filing retrieval."
+                    }
+                },
+                "required": ["ticker", "keywords"],
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_stock_price",
+            "description": "Get the price for a given stock on a specified date, and if no date is specified simply use today's date. Use context to derive dates if not specifically given, e.g. 'last friday' or 'when GPT-4 launched'. An example prompt may be 'What is the current price of x stock', or 'tell me the share price of Tesla when Russia invaded Ukraine",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "ticker": {
+                        "type": "string",
+                        "description": "The ticker of the stock you are trying to get the price of. E.g TSLA, AAPL, NVDA"
+                    },
+                    "date": {
+                        "type": "string",
+                        "description": "The specific date for the historical price in the format YYYY-MM-DD. Leave empty for the current price."
+                    }
+                },
+                "required": ["ticker"],
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_historical_stock_data",
+            "description": "Get historical stock price data for a given stock over a specified date range. This is useful for customers who want to see how a stock has performed over time, for example, 'Show me the stock prices of AAPL from January 2021 to December 2021'. If the end date is not explicitly specified, use today's date.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "ticker": {
+                        "type": "string",
+                        "description": "The ticker of the stock for which historical data is being requested. E.g. TSLA, AAPL, NVDA"
+                    },
+                    "start_date": {
+                        "type": "string",
+                        "description": "The start date for the historical data in the format YYYY-MM-DD. You need to infer this from today's date, unless specified."
+                    },
+                    "end_date": {
+                        "type": "string",
+                        "description": "The end date for the historical data in the format YYYY-MM-DD. You need to infer this from today's date, unless specified."
+                    }
+                },
+                "required": ["ticker", "start_date", "end_date"],
+                "additionalProperties": false
+            }
+        }
+    }, 
+    {
+        "type": "function",
+        "function": {
+            "name": "retrieve_portfolio",
+            "description": "Retrieves a copy of the user's financial portfolio. Use this function when specific requests are made by the user about their portfolio, or when you think their portfolio data is necessary to answer a query.",
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_news",
+            "description": "Get relevant financial news summaries based on topics and tickers. Use this when the user asks about news, market updates, or recent events related to specific companies or sectors.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string",
+                        "description": "The user's news query or context"
+                    },
+                    "topics": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of financial topics to filter news by (e.g., earnings, mergers, market trends)"
+                    },
+                    "tickers": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of stock tickers to filter news by (e.g., AAPL, GOOGL)"
+                    }
+                },
+                "required": ["query"]
+            }
+        }
+    },
+    {
+        "type": "function", 
+        "function": {
+            "name": "agent_orchestrator",
+            "description": "This is the orchestrating agent for a multi-agent system. Any queries which can be augmented by more data that you do not have access to must be routed to the agent orchestrator. Current agents include: a company data agent, which retrieves quantitative data.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "instructions": 
+                    {
+                        "type": "string",
+                        "description": "The instructions for the agent orchestrator must include a direct quotation of the most recent user prompt along with any additional context that is necessary to ensure a robust response."
+                    }
+                }, 
+                "required": ["instructions"], 
+                "additionalProperties": false
+            }
+        }
+    }
+]

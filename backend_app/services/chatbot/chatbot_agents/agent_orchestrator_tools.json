@@ -1,0 +1,21 @@
+[
+    {
+        "type": "function", 
+        "function": {
+            "name": "company_data_agent",
+            "description": "This is the agent which fetches quantitative company data. You must call it if you require any sort of quantitative data relevant to specific companies.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "instructions": 
+                    {
+                        "type": "string",
+                        "description": "The prompt for the company data agent. Include the relevant company name and ticker, and the specifics of the quantitative data required. You may be as verbose as you need to communicate the requirements in the prompt."
+                    }
+                }, 
+                "required": ["instructions"], 
+                "additionalProperties": false
+            }
+        }
+    }
+]

@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "concurrently \"uvicorn backend_app.app:app --host 127.0.0.1 --port 8000 --reload\" \"cd frontend_app/goosedlegs && npm start\"",
+    "build": "cd goosedlegs && npm install && npm run build"
+  },
+  "dependencies": {
+    "dompurify": "^3.1.7",
+    "marked": "^14.1.4",
+    "serve": "^14.2.4"
+  }
+}

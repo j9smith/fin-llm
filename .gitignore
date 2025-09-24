@@ -1,0 +1,7 @@
+OPENAI_API_KEY.env
+*.env
+venv
+__pycache__/
+*.pyc
+.DS_Store
+/chroma

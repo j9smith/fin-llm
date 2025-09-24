@@ -1,0 +1,47 @@
+{
+    "user_id": "user_1",
+    "portfolio": [
+       {
+          "asset_type": "stock",
+          "symbol": "AAPL",
+          "name": "Apple Inc.",
+          "quantity": 15,
+          "purchase_price": 145.0,
+          "current_price": 223.83,
+          "sector": "Technology",
+          "currency": "USD"
+       },
+       {
+          "asset_type": "stock",
+          "symbol": "TSLA",
+          "name": "Tesla, Inc.",
+          "quantity": 5,
+          "purchase_price": 300.0,
+          "current_price": 284.09,
+          "sector": "Automotive",
+          "currency": "USD"
+       },
+       {
+          "asset_type": "stock",
+          "symbol": "MSFT",
+          "name": "Microsoft Corporation",
+          "quantity": 10,
+          "purchase_price": 250.0,
+          "current_price": 415.90,
+          "sector": "Technology",
+          "currency": "USD"
+       },
+       {
+          "asset_type": "stock",
+          "symbol": "AMZN",
+          "name": "Amazon.com Inc.",
+          "quantity": 8,
+          "purchase_price": 178.0,
+          "current_price": 203.79,
+          "sector": "Consumer Discretionary",
+          "currency": "USD"
+       }
+    ],
+    "currency": "USD"
+ }
+ 
