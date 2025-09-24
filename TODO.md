@@ -8,17 +8,13 @@ Going to start collecting things that need doing in here. Feel free to add/remov
 - **Multiple threads:** ideally we need to introduce the ability to have multiple threads. Conversations will grow more and more expensive as time goes on, context gets lost, etc. Separately, the way most people use chatbots is to have a separate thread open for each topic of discussion.
 - **Sessions:** we need to implement user sessions, for obvious reasons. This implicitly includes user auth which we also need to add.
 - **Online deployment:** ideally we should deploy our solution on a live online server as soon as possible.
-- **Metrics:** this is a big one for me. We need to start introducing metrics across the system so we can evaluate how well each aspect is performing. Basic stuff like token usage per request/conversation up to more complex stuff like evaluating the relevance of our RAG requests. What we can measure we can improve. Ideally we'd have a centralised interface where we can have an overview of all of these.
+- **Metrics:** We need to start introducing metrics across the system so we can evaluate how well each aspect is performing. Basic stuff like token usage per request/conversation up to more complex stuff like evaluating the relevance of our RAG requests. What we can measure we can improve. Ideally we'd have a centralised interface where we can have an overview of all of these.
 - **Generative UI:** could look in to how we can leverage our tool calls to pass back an appropriate UI element to include in a response. For example, if we're passing back some time series data, we'd want the chat to generate a graph element.
 - **Defining file structures and I/O:** need to start thinking about how we're going to dynamically pull in external files (like news articles and reg. filings), how we're going to process them, and how we're going to store them.
 - **Portfolio importing:** import user portfolios and store in a database. This could live in a separate part of the UI (i.e. standard upload in user area), and the model then knows to use this for context.
 More generally as part of this just need the app to be able to handle user inputting e.g. an image into the chat bot itself. Doesn't necessarily need to be stored at this point, but just so it can be used as part of the context 
-- **Cache:** we need to implement a cache to avoid for example redundant API requests. What if multiple users request the same stock price on the same day? We don't want to make multiple API calls, we want to pull from the cache instead. 
-- **Tooling:** we need to introduce more tooling.
-  - _News:_ need to add a tool to pull in recent news.
-  - _Pricing:_ something that can pull in pricing data (like stock prices). Could be just call an external API for now, but I agree with Mitch that we should have some sort of static storage that we update daily, just to avoid incurring big API costs.
-  - Plenty more that we could add as well
-  - Do we want to add analytics for portfolios? Not saying we need the boring stuff like "tracking", but perhaps can sell it as the "tooling professionals use to analyse their positions" etc. 
+- **Cache:** we need to implement a cache to avoid for example redundant API requests. What if multiple users request the same stock price on the same day? We don't want to make multiple API calls, we want to pull from the cache instead.
+- Do we want to add analytics for portfolios? Not saying we need the boring stuff like "tracking", but perhaps can sell it as the "tooling professionals use to analyse their positions" etc. 
 
 ## app.py
 
