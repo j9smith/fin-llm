@@ -12,19 +12,15 @@
 
 ## Installation and Execution
 Requires local installation of `node.js` and `Docker Compose`. 
-To install and execute:
+To install and execute (fill in your own API keys):
 ```bash
 git clone git@github.com:j9smith/fin-llm.git
 cd fin-llm
+echo "OPENAI_API_KEY={YOUR API KEY HERE}" > .env
+echo "REACT_API_APP_URL=127.0.0.1:8000" > frontend_app/goose/.env
 npm start
 ```
 The webpage can then be accessed at `http://127.0.0.1:3000`.
-
-The following script must be executed to create necessary `.env` files (fill your own API keys):
-```bash
-echo "OPENAI_API_KEY={YOUR API KEY HERE}" > .env
-echo "REACT_API_APP_URL=127.0.0.1:8000" > frontend_app/goose/.env
-```
 
 ## Contributors
 This project was a joint effort between: 
