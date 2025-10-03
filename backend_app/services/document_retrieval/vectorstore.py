@@ -18,7 +18,7 @@ def initialise():
     global client, collection, embedding_model
 
     if embedding_model is None: 
-        embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+        embedding_model = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
     
     if not os.path.exists(persistent_directory):
         os.makedirs(persistent_directory)
