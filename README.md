@@ -1,7 +1,7 @@
 # Financial Advisor LLM
-<img width="1164" height="722" alt="image" src="https://github.com/user-attachments/assets/b0675c88-7171-4c45-afcf-407b2550bac5" />
+<img width="873" height="541" alt="image" src="https://github.com/user-attachments/assets/b0675c88-7171-4c45-afcf-407b2550bac5" />
 
-Features:
+## Features
 - **Framework**: Leverages OpenAI's API and built with a FastAPI backend and a node.js frontend, using PostgreSQL for data storage.
 - **Tool calling**: The LLM has access to tool calls to support operation, e.g., calling APIs, retrieving portfolios, etc.
 - **Multi-agentic framework**: Uses an orchestration agent to direct requests to agents optimised for specific roles.
@@ -18,7 +18,7 @@ git clone git@github.com:j9smith/fin-llm.git
 cd fin-llm
 npm start
 ```
-The webpage can then be accessed at `https://127.0.0.1:3000`.
+The webpage can then be accessed at `http://127.0.0.1:3000`.
 
 ## Contributors
 This project was a joint effort between: 
