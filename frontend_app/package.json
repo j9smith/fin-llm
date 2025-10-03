@@ -1,7 +1,12 @@
 {
   "scripts": {
-    "start": "concurrently \"uvicorn backend_app.app:app --host 127.0.0.1 --port 8000 --reload\" \"cd frontend_app/goosedlegs && npm start\"",
-    "build": "cd goosedlegs && npm install && npm run build"
+    "frontend:start": "cd goose && npm start",
+    "frontend:dev": "cd goose && npm run dev",
+
+    "backend:up": "docker compose up -d fin-llm-backend",
+    "backend:down": "docker compose down",
+
+    "start": "concurrently -k \"npm run backend:up\" \"npm run frontend:start\""
   },
   "dependencies": {
     "dompurify": "^3.1.7",

@@ -2,12 +2,12 @@ from fastapi import FastAPI, Request, status
 from fastapi.responses import JSONResponse, StreamingResponse, HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 from backend_app.services.chatbot import chat_logic
-from backend_app.services.auth.auth_routes import auth_router
+#from backend_app.services.auth.auth_routes import auth_router
 import json
 
 app = FastAPI()
 
-app.include_router(auth_router)
+#app.include_router(auth_router)
 
 allowed_origins = [
     "http://localhost:3000",  # Development
@@ -41,3 +41,7 @@ async def chat(request: Request):
                 yield chunk
     
     return StreamingResponse(generate_stream(), media_type="text/event-stream")
+
+@app.get("/health")
+async def health():
+    return {"status": "ok"}

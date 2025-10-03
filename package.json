@@ -7,7 +7,9 @@
     "concurrently": "^9.1.0"
   },
   "scripts": {
-    "start": "concurrently \"uvicorn backend_app.app:app --host 127.0.0.1 --port 8000 --reload\" \"cd frontend_app/goose && npm start\"",
-    "build": "cd frontend_app/goose && npm install && npm run build"
+    "start": "npm run backend:up && npm run frontend:start",
+    "backend:up": "docker compose up -d fin-llm-backend",
+    "backend:down": "docker compose down",
+    "frontend:start": "cd frontend_app/goose && npm start"
   }
 }
