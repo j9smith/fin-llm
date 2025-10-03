@@ -20,7 +20,7 @@ echo "OPENAI_API_KEY={YOUR API KEY HERE}" > .env
 echo "REACT_API_APP_URL=127.0.0.1:8000" > frontend_app/goose/.env
 npm start
 ```
-The webpage can then be accessed at `http://127.0.0.1:3000`.
+The webpage can then be accessed at `http://localhost:3000`.
 
 ## Contributors
 This project was a joint effort between: 
