@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: fin-llm-backend
+  namespace: fin-llm
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fin-llm-backend
+    
+  template:
+    metadata:
+      labels:
+        app: fin-llm-backend
+
+    spec:
+      containers:
+        - name: backend
+          image: fin-llm-backend:slim
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: 8000
+
+          env:
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: openai
+                  key: OPENAI_API_KEY
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+
+---
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: fin-llm-backend
+  namespace: fin-llm
+
+spec:
+  selector:
+    app: fin-llm-backend
+  ports:
+    - port: 8000
+      targetPort: 8000
+  type: ClusterIP
