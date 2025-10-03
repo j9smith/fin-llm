@@ -1,4 +1,5 @@
 # Financial Advisor LLM
+<img width="1164" height="722" alt="image" src="https://github.com/user-attachments/assets/b0675c88-7171-4c45-afcf-407b2550bac5" />
 
 Features:
 - **Framework**: Leverages OpenAI's API and built with a FastAPI backend and a node.js frontend, using PostgreSQL for data storage.
@@ -7,7 +8,17 @@ Features:
 - **Vector store retrieval**: Stores regulatory filings in a vector database (ChromaDB/pgvector) for retrieval during inference.
 - **API calls**: Can access up-to-date news, regulatory filings, and real-time data feeds via API calls.
 - **Generative UI**: Populates UI elements in a generative fashion as directed by the LLM, useful for displaying data.
-- **User auth**: User authentication handled via FastAPI/SQLAlchemy/PostgreSQL. 
+- **User auth**: User authentication handled via FastAPI/SQLAlchemy/PostgreSQL.
+
+## Installation and Execution
+Requires local installation of `node.js` and `Docker Compose`. 
+To install and execute:
+```bash
+git clone git@github.com:j9smith/fin-llm.git
+cd fin-llm
+npm start
+```
+The webpage can then be accessed at `https://127.0.0.1:3000`.
 
 ## Contributors
 This project was a joint effort between: 
