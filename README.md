@@ -20,6 +20,12 @@ npm start
 ```
 The webpage can then be accessed at `http://127.0.0.1:3000`.
 
+The following script must be executed to create necessary `.env` files (fill your own API keys):
+```bash
+echo "OPENAI_API_KEY={YOUR API KEY HERE}" > .env
+echo "REACT_API_APP_URL=127.0.0.1:8000" > frontend_app/goose/.env
+```
+
 ## Contributors
 This project was a joint effort between: 
 - [@alexlambert1](https://github.com/alexlambert1)
