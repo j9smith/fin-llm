@@ -25,5 +25,5 @@ The webpage can then be accessed at `http://localhost:3000`.
 ## Contributors
 This project was a joint effort between: 
 - [@alexlambert1](https://github.com/alexlambert1)
-- [@crabbacus](https://github.com/crabbacus)
+- [@mitch-c](https://github.com/mitch-c)
 - [@j9smith](https://github.com/j9smith)
